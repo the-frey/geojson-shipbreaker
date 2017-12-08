@@ -25,4 +25,7 @@ profiles.clj
 figwheel_server.log
 /data/simplified-wgs84.json
 /data/geojson
+/data/2pc-simplified-wgs84.json.zip
+/data/2pc-geojson
+/data/2pc-simplified-wgs84.json
 
