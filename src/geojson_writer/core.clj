@@ -52,8 +52,8 @@
                                       :as doc}]
   (let [geometry (-> location
                      :coordinates)
-        new-location {:type "multipolygon"
-                      :coordinates [geometry]}]
+        new-location {:location {:type "multipolygon"
+                                 :coordinates [geometry]}}]
     (merge doc
            new-location)))
 
