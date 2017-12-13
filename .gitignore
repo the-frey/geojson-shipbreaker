@@ -29,4 +29,5 @@ figwheel_server.log
 /data/2pc-simplified-wgs84.json.zip
 /data/2pc-geojson
 /data/2pc-simplified-wgs84.json
+/data/5pc_jsontest.json
 

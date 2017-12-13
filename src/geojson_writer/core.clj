@@ -58,7 +58,7 @@
            new-location)))
 
 (defn smash-data-into-elasticsearch []
-  (with-open [reader (-> "./data/simplified-wgs84.json"
+  (with-open [reader (-> "./data/5pc_jsontest.json"
                          io/file
                          io/reader)]
     (let [conn (esr/connect "http://127.0.0.1:9200")
@@ -84,13 +84,14 @@
                                           "doc"
                                           document)
                               (catch Exception e
-                                (do
-                                  (println (.toString e))
-                                  (println "> Retrying as multipolygon")
-                                  (esd/create conn
-                                              configured-index-name
-                                              "doc"
-                                              (polygon-doc->multipolygon-doc document)))
+                                (comment (do
+                                  
+                                   (println "> Retrying as multipolygon")
+                                   (esd/create conn
+                                               configured-index-name
+                                               "doc"
+                                               (polygon-doc->multipolygon-doc document))))
+                                (println (.toString e))
                                 ))]
                (do
                  (println "> Inserted: ")
